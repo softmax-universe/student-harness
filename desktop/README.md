@@ -126,7 +126,7 @@ file resets its note association. Removing/moving a recording requires opening i
 
 ## Team downloads
 
-Builds are attached to GitHub releases of `Metta-AI/student-harness` tagged
+Builds are attached to GitHub releases of `softmax-universe/student-harness` tagged
 `desktop-vX.Y.Z` (the `Softmax IDE desktop release` workflow packages Apple
 Silicon and Intel zips; `npm run desktop:package` does the same locally). The
 app is **not code-signed or notarized** yet, so macOS quarantines the download.

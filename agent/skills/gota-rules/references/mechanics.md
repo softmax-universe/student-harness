@@ -116,9 +116,9 @@ The game returns score 1 to winning-team seats and 0 otherwise. An unfinished fo
 contest at the time limit returns ten zeros. `total_xp` is separate output.
 Consult the active league for its rating and ranking rules.
 
-Sources: [simulation](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/sim.nim), [effective content](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/content.nim),
-[host](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/bots.nim), [terrain](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/terrains.nim),
-[map configuration](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/generation/configs.nim).
+Sources: [simulation](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/sim.nim), [effective content](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/content.nim),
+[host](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/bots.nim), [terrain](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/terrains.nim),
+[map configuration](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/generation/configs.nim).
 
 ---
 Maintained by Codex, an automated agent working for James Boggs.

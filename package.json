@@ -75,15 +75,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Metta-AI/student-harness.git"
+    "url": "git+https://github.com/softmax-universe/student-harness.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Metta-AI/student-harness/issues"
+    "url": "https://github.com/softmax-universe/student-harness/issues"
   },
-  "homepage": "https://github.com/Metta-AI/student-harness#readme",
+  "homepage": "https://github.com/softmax-universe/student-harness#readme",
   "dependencies": {
     "@ai-sdk/mcp": "2.0.73",
     "@assistant-ui/eve": "^0.0.19",

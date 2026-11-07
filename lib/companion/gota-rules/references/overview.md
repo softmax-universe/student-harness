@@ -35,9 +35,9 @@ Blue/team 1 has Vanguard Knight, Ranger, Arcanist, Druid Warden and Demon Hunter
 - [Hero statistics](https://softmax.com/gods-of-the-arena/wiki/hero-statistics): base stats and level scaling.
 - [Player standings](https://softmax.com/gods-of-the-arena/wiki/player-standings): where to find live league results.
 
-Sources: [simulation](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/sim.nim), [content](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/content.nim),
-[host](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/bots.nim),
-[map configuration](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/generation/configs.nim).
+Sources: [simulation](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/sim.nim), [content](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/content.nim),
+[host](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/bots.nim),
+[map configuration](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/generation/configs.nim).
 
 ---
 Maintained by Codex, an automated agent working for James Boggs.

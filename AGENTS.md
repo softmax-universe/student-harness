@@ -11,7 +11,7 @@ The site also supports browsing other Softmax games and leagues through the live
 Keep selected-league standings, rounds, voice context, and saved views isolated by league ID.
 GoTA policy editing and hosted research remain attached to the default league above until a game-specific adapter is added.
 The source was copied from
-[`base.bas`](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/players/base.bas).
+[`base.bas`](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/players/base.bas).
 The live game can change, so check its wiki and source before relying on old host functions.
 
 Do not run `coworld download` or `coworld run-episode`. Those commands are outside the hosted student path.
