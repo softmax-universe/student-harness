@@ -10,7 +10,7 @@ const snapshotSchema = z.object({
 });
 
 export async function getPlayerSnapshot(policyId: string) {
-  const response = await fetch("https://metta-ai.github.io/polyworld-buff/GOTA/players/data.json", { next: { revalidate: 3600 } });
+  const response = await fetch("https://softmax-universe.github.io/polyworld-buff/GOTA/players/data.json", { next: { revalidate: 3600 } });
   if (!response.ok) throw new Error(`Player snapshot returned ${response.status}`);
   const snapshot = snapshotSchema.parse(await response.json());
   const version = snapshot.players.flatMap((player) => player.policyVersions).find((item) => item.id === policyId);

@@ -34,8 +34,8 @@ Boolean operators evaluate both operands. Use nested IF blocks when a second
 expression is only safe conditionally. Division by zero and invalid array access
 raise VM errors. Integer scaling is possible, but intermediate overflow wraps.
 
-Sources: [compiler/runtime](https://github.com/Metta-AI/polyworld/blob/7365e4e9/src/polyworld/basic.nim),
-[language examples/tests](https://github.com/Metta-AI/polyworld/blob/7365e4e9/tests/test_basic.nim).
+Sources: [compiler/runtime](https://github.com/softmax-universe/polyworld/blob/7365e4e9/src/polyworld/basic.nim),
+[language examples/tests](https://github.com/softmax-universe/polyworld/blob/7365e4e9/tests/test_basic.nim).
 
 ## How a policy executes
 
@@ -49,8 +49,8 @@ persist; instruction/work/logging budgets reset. There is no need to write an en
 outer game loop. Dead heroes skip decisions, and a runtime-failed VM stays disabled.
 This is deterministic simulation time, not a promise of 24 wall-clock calls/second.
 
-Sources: [host lifecycle](https://github.com/Metta-AI/polyworld/blob/7365e4e9/examples/gods_of_the_arena/bots.nim),
-[simulation](https://github.com/Metta-AI/polyworld/blob/7365e4e9/examples/gods_of_the_arena/sim.nim).
+Sources: [host lifecycle](https://github.com/softmax-universe/polyworld/blob/7365e4e9/examples/gods_of_the_arena/bots.nim),
+[simulation](https://github.com/softmax-universe/polyworld/blob/7365e4e9/examples/gods_of_the_arena/sim.nim).
 
 ## Observation and action surface
 
@@ -107,7 +107,7 @@ Recorded action entries capture requests before acceptance; they are not counts 
 successful actions. Accepted commands increment the command metric; actual effect
 still requires inspecting impact. See [mechanics](https://softmax.com/gods-of-the-arena/wiki/mechanics).
 
-Source: [registered host API](https://github.com/Metta-AI/polyworld/blob/7365e4e9/examples/gods_of_the_arena/bots.nim).
+Source: [registered host API](https://github.com/softmax-universe/polyworld/blob/7365e4e9/examples/gods_of_the_arena/bots.nim).
 
 ## Enforced limits
 
@@ -141,8 +141,8 @@ Compilation failure fails the episode with a player diagnostic. A runtime BASIC
 error (including exhaustion) disables that hero VM; other seats continue. A script
 that compiles can still exhaust its runtime budget, including during a busy late-game decision.
 
-Sources: [exact limits](https://github.com/Metta-AI/polyworld/blob/7365e4e9/examples/gods_of_the_arena/bots.nim),
-[private logging and compilation failure](https://github.com/Metta-AI/polyworld/blob/7365e4e9/src/polyworld/coworld.nim).
+Sources: [exact limits](https://github.com/softmax-universe/polyworld/blob/7365e4e9/examples/gods_of_the_arena/bots.nim),
+[private logging and compilation failure](https://github.com/softmax-universe/polyworld/blob/7365e4e9/src/polyworld/coworld.nim).
 
 ## Complete host names and units
 
@@ -183,7 +183,7 @@ Ability cooldown/recharge values are ticks (24 per simulated second).
 
 ## Starter
 
-The official [base.bas](https://github.com/Metta-AI/polyworld/blob/7365e4e9/coworld/gota/players/base.bas) selects the nearest visible living enemy,
+The official [base.bas](https://github.com/softmax-universe/polyworld/blob/7365e4e9/coworld/gota/players/base.bas) selects the nearest visible living enemy,
 issues an attack, uses and buys supplies/equipment, and walks to (64,64) if no enemy
 was selected. It does not explicitly cast spells and uses none of the extended
 observations. Its globals persist, but targeting

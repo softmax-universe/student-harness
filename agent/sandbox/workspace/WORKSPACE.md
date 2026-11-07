@@ -10,7 +10,7 @@ student's saved history whenever a new chat session opens its sandbox.
   Softmax policy version ID, and hosted results so far.
 - `experiments/<xp_request_id>.json` — results of hosted games that have been checked.
 - `docs/` — the Gods of the Arena wiki snapshot (rules, kits, BASIC host functions).
-- `optimizer-seed/` — the optimizer method (Metta-AI/optimizer-seed, branch
+- `optimizer-seed/` — the optimizer method (softmax-universe/optimizer-seed, branch
   `aaln/semantic-ir-symbolic-loop`). Read its `AGENTS.md`. The student's lab is
   `optimizer-seed/games/gods-of-the-arena/`; files there and the seed's root memory files
   (`WORKING_CONTEXT.md`, `TENTATIVE_LESSONS.md`, `best_practices.md`, `closed_levers.md`,

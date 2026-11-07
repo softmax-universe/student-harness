@@ -3,9 +3,9 @@ const cache=new Map<string,Promise<string>>();
 
 /** Public, immutable source only. Never fetch agent-supplied URLs or credentials. */
 export async function gameReference(sourceUrl:string,file:typeof referenceFiles[number],query='',startLine=1,maxLines=100){
- const commit=sourceUrl.match(/^https:\/\/github\.com\/Metta-AI\/polyworld\/tree\/([a-f0-9]{40})\/examples\/gods_of_the_arena$/)?.[1];
+ const commit=sourceUrl.match(/^https:\/\/github\.com\/(?:Metta-AI|softmax-universe)\/polyworld\/tree\/([a-f0-9]{40})\/examples\/gods_of_the_arena$/)?.[1];
  if(!commit||!referenceFiles.includes(file))throw Error('Unsupported pinned game reference');
- const url=`https://raw.githubusercontent.com/Metta-AI/polyworld/${commit}/examples/gods_of_the_arena/${file}`;
+ const url=`https://raw.githubusercontent.com/softmax-universe/polyworld/${commit}/examples/gods_of_the_arena/${file}`;
  let pending=cache.get(url);
  if(!pending){
   pending=(async()=>{const r=await fetch(url,{signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error(`Pinned game source returned ${r.status}`);const text=await r.text();if(text.length>2_000_000)throw Error('Game reference exceeds source limit');return text;})();

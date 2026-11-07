@@ -15,7 +15,7 @@ def checkout(path,url,revision):
         run('git','-C',path,'fetch','--depth','1','origin',revision);run('git','-C',path,'checkout','--detach','FETCH_HEAD')
 try:
     config=json.loads((ROOT/'session.json').read_text());release=config['release']
-    match=re.fullmatch(r'https://github.com/Metta-AI/polyworld/tree/([a-f0-9]{40})/examples/gods_of_the_arena',release['sourceUrl'])
+    match=re.fullmatch(r'https://github.com/(?:Metta-AI|softmax-universe)/polyworld/tree/([a-f0-9]{40})/examples/gods_of_the_arena',release['sourceUrl'])
     if not match:raise ValueError('Unsupported release source')
     if (ROOT/'engines.json').exists() and json.loads((ROOT/'engines.json').read_text()).get(release['fingerprint'],{}).get('probeBinary'):
         save({'state':'ready'});raise SystemExit(0)
@@ -25,7 +25,7 @@ try:
         run('sudo','apt-get','update');run('sudo','apt-get','install','-y','git','build-essential','xz-utils','libssl-dev')
     elif shutil.which('dnf'):run('sudo','dnf','install','-y','git','gcc','gcc-c++','make','xz','openssl-devel')
     else:raise ValueError('Unsupported auditor VM package manager')
-    engine=ROOT/'engine';deps=ROOT/'deps';checkout(engine,'https://github.com/Metta-AI/polyworld.git',match[1]);deps.mkdir(exist_ok=True)
+    engine=ROOT/'engine';deps=ROOT/'deps';checkout(engine,'https://github.com/softmax-universe/polyworld.git',match[1]);deps.mkdir(exist_ok=True)
     for line in (engine/'coworld/dependencies.lock').read_text().splitlines():
         if line.strip():
             name,_,url,revision=line.split();checkout(deps/name,url,revision)

@@ -71,7 +71,7 @@ Build a BASIC policy for the [default Gods of the Arena league](https://softmax.
 
 The IDE tracks each policy as one revision containing `hero.bas`, a seven-layer semantic IR, exact source offsets and SHA-256 hashes, parent revision, coaching evidence references, and separate verification receipts. The policy tab links strategy rules to highlighted BASIC lines. Download **IR + BASIC** to inspect the pair. A new agent edit creates a new pair before the BASIC source is uploaded. The semantic description is authored intent; the source map checks representation only. Behavior and competitive performance remain unverified until independent replay and hosted-game checks exist.
 
-This is a source-map adapter for the [optimizer-seed semantic IR ↔ symbolic proposal](https://github.com/Metta-AI/optimizer-seed/blob/aaln/semantic-ir-symbolic-loop/docs/specs/0001-semantic-ir-symbolic-loop.md). Its seven layers and separate receipts follow that proposal. It does not use the proposed whole-program compiler or reverse recognizer, which are not implemented for this `hero.bas` version. Existing policies are imported with unknown intent and retain their executable bytes.
+This is a source-map adapter for the [optimizer-seed semantic IR ↔ symbolic proposal](https://github.com/softmax-universe/optimizer-seed/blob/aaln/semantic-ir-symbolic-loop/docs/specs/0001-semantic-ir-symbolic-loop.md). Its seven layers and separate receipts follow that proposal. It does not use the proposed whole-program compiler or reverse recognizer, which are not implemented for this `hero.bas` version. Existing policies are imported with unknown intent and retain their executable bytes.
 The browser app asks for a Softmax user token and gives the student a durable coach with a real shell over their
 policy workspace. The coach edits `hero.bas`, saves revisions, uploads them, requests hosted episodes, and reads
 results through typed tools. The student enters the league from the Policy tab or by asking the coach, who must
@@ -113,7 +113,7 @@ The app may show replay-derived behavior metrics when a dated snapshot contains 
 ## Quick start with an AI coding agent
 
 ```bash
-git clone https://github.com/Metta-AI/student-harness.git
+git clone https://github.com/softmax-universe/student-harness.git
 cd student-harness
 uv sync
 uv run softmax login
@@ -130,7 +130,7 @@ Vercel Sandbox. The sandbox is rebuilt from the student's saved history when the
 `/workspace/hero.bas` is the working copy, `versions/` holds one file pair per saved revision,
 `experiments/` holds checked hosted results, `docs/` holds the game wiki snapshot, and the directory
 is a git repository with one commit per revision. The snapshot also carries a clone of
-[optimizer-seed](https://github.com/Metta-AI/optimizer-seed/tree/aaln/semantic-ir-symbolic-loop) with a Gods of the
+[optimizer-seed](https://github.com/softmax-universe/optimizer-seed/tree/aaln/semantic-ir-symbolic-loop) with a Gods of the
 Arena lab whose files are synced to Supabase after every turn, and a pinned `coworld` CLI behind an allowlisting
 shim (`agent/sandbox/scripts/`): read commands and `upload-policy --file` only, no Docker, no replay downloads. The
 sandbox network reaches only softmax.com, where the student's token is injected at the boundary, and the policy

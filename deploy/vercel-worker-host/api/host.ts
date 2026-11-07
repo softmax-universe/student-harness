@@ -10,7 +10,7 @@ import {Sandbox} from '@vercel/sandbox';
 
 /** Overridable only so bounded live fixtures never collide with the production host. */
 const SANDBOX_NAME=process.env.CONTAINER_POLICY_HOST_NAME?.trim()||'preston-policy-workers';
-const REPOSITORY='https://github.com/Metta-AI/student-harness.git';
+const REPOSITORY='https://github.com/softmax-universe/student-harness.git';
 /** The git source is cloned next to the sandbox home, named after the repository. */
 const CHECKOUT='/vercel/student-harness';
 /** Pro sandboxes may run 24h. Keep the lease under that and let the

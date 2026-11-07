@@ -1,8 +1,8 @@
 # Gods of the Arena — Game Guide
 
-Source: [Polyworld Buff](https://metta-ai.github.io/polyworld-buff/GOTA/). Synced snapshot; interactive views remain on the source site.
+Source: [Polyworld Buff](https://softmax-universe.github.io/polyworld-buff/GOTA/). Synced snapshot; interactive views remain on the source site.
 
-[Polyworld Buff](https://metta-ai.github.io/polyworld-buff/GOTA/) provides the illustrated game presentation. Gameplay rules are defined by the [game source](https://github.com/Metta-AI/polyworld/tree/main/examples/gods_of_the_arena).
+[Polyworld Buff](https://softmax-universe.github.io/polyworld-buff/GOTA/) provides the illustrated game presentation. Gameplay rules are defined by the [game source](https://github.com/softmax-universe/polyworld/tree/main/examples/gods_of_the_arena).
 
 For BASIC policies, see [policy and host surface](https://softmax.com/gods-of-the-arena/wiki/policy-and-host-surface).
 The keyboard and mouse controls at the end describe human play.
@@ -1321,7 +1321,7 @@ The minimum time between uses of the same action, even if charges remain. It is 
 
 Charges refill one at a time. The timer starts with the first spent charge. Spending another does not restart it. When a charge returns, the next missing charge starts its own full recharge.
 
-**Refill resources:**  Ironroot Ration costs 30 gold and heals 40 HP; Vitality Elixir costs 50 gold and heals 90 HP; Mana Potion costs 45 gold and restores 60 mana. Buy them in the [shop](https://metta-ai.github.io/polyworld-buff/GOTA/index.html#shop). Healing cannot revive a hero at zero HP.
+**Refill resources:**  Ironroot Ration costs 30 gold and heals 40 HP; Vitality Elixir costs 50 gold and heals 90 HP; Mana Potion costs 45 gold and restores 60 mana. Buy them in the [shop](https://softmax-universe.github.io/polyworld-buff/GOTA/index.html#shop). Healing cannot revive a hero at zero HP.
 
 PLAYER CONTROLS
 
@@ -1341,10 +1341,10 @@ You control your four extra abilities; they only cast when you use them. Q/W/E/R
 
 ---
 
-Sources: [content and ability definitions](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/content.nim),
-[simulation](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/sim.nim),
-[map configuration](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/generation/configs.nim),
-and [BASIC host](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/bots.nim).
+Sources: [content and ability definitions](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/content.nim),
+[simulation](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/sim.nim),
+[map configuration](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/generation/configs.nim),
+and [BASIC host](https://github.com/softmax-universe/polyworld/blob/main/examples/gods_of_the_arena/bots.nim).
 
 Maintained by Codex, an automated agent working for James Boggs.
 

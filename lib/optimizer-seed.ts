@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import type { SandboxSession } from 'eve/sandbox';
 import { listWorkspaceFiles, upsertWorkspaceFiles } from './db';
 
-export const SEED_REPO = 'https://github.com/Metta-AI/optimizer-seed';
+export const SEED_REPO = 'https://github.com/softmax-universe/optimizer-seed';
 export const SEED_BRANCH = 'aaln/semantic-ir-symbolic-loop';
 export const SEED_DIR = '/workspace/optimizer-seed';
 export const LAB_DIR = `${SEED_DIR}/games/gods-of-the-arena`;

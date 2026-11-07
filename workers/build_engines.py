@@ -13,9 +13,9 @@ def command(*args, **kwargs):
 
 def build(args):
     engine, deps, output = args.engine.resolve(), args.deps.resolve(), args.output.resolve()
-    match = re.fullmatch(r'https://github.com/Metta-AI/polyworld/tree/([a-f0-9]{40})/examples/gods_of_the_arena', args.source_url)
+    match = re.fullmatch(r'https://github.com/(?:Metta-AI|softmax-universe)/polyworld/tree/([a-f0-9]{40})/examples/gods_of_the_arena', args.source_url)
     if not match or not re.fullmatch(r'[a-f0-9]{64}', args.fingerprint):
-        raise ValueError('Supply the exact canonical source URL and manifest fingerprint')
+        raise ValueError('Supply a pinned Polyworld source URL and manifest fingerprint')
     if command('git', '-C', engine, 'rev-parse', 'HEAD') != match[1]:
         raise ValueError('Engine checkout differs from canonical release')
     if command('git', '-C', engine, 'diff', 'HEAD', '--', 'src', 'examples/gods_of_the_arena', 'coworld/dependencies.lock'):
