@@ -1,5 +1,8 @@
 # Claude Code workstream: independent policy worker hosting
 
+> Historical workstream notes: deployment instructions below may be stale. See the
+> [current deployment guidance](../README.md#deployment) before deploying.
+
 ## Objective
 
 Make the existing hosted policy build, upload and practice workers continue when
@@ -11,7 +14,7 @@ not migration of Eve chat/research Workflow storage.
 Read `AGENTS.md`, `README.md`, `docs/runtime-ownership.md`,
 `docs/companion-implementation-status.md`, and
 `deploy/vercel-worker-host/README.md` first. Later dated status updates supersede
-earlier deployment instructions: all hosting is Vercel-only. The wider product design is
+earlier workstream notes. The wider product design is
 `docs/preston-companion-harness.md`. Existing infrastructure conventions are in
 the sibling `../metta` repository. Inspect available credentials without printing,
 copying into artifacts, or committing their values.
@@ -1864,9 +1867,9 @@ Hermes mode is live on production; details in docs/hermes-mode.md.
   preview), copied from .env.local. Before this, hosted container builds were
   off in production.
 - Production builds that reuse the build cache fail in `scripts/patch-eve.mjs`
-  ("Unrecognized Eve source: dist/src/harness/tool-loop.js"). `vercel promote`
-  of a preview rebuilds with the cache and fails the same way; deploy with
-  `vercel deploy --prod --force`.
+  ("Unrecognized Eve source: dist/src/harness/tool-loop.js"). Preview promotion also
+  rebuilt with the cache and failed. At the time, the workstream used a forced
+  production deployment to bypass that cache.
 - Added `@vercel/oidc` 3.2.0 as a direct dependency (package.json only; it was
   already in the lockfile). Hermes reads the AI Gateway token per request with
   `getVercelOidcToken()`. `lib/terminal/gateway-credits.ts` and

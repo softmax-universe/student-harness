@@ -3,8 +3,9 @@
 A separate, tiny Vercel project (`student-harness-worker-host`, Softmax team)
 whose only job is to keep one named Vercel Sandbox running the existing
 supervisor `scripts/container-policy-service.mjs` from a pinned public commit,
-so the build, upload and practice workers no longer depend on a laptop. All
-Softmax deployments use Vercel; this is the hosting path for the workers.
+so the build, upload and practice workers no longer depend on a laptop. The separate
+project has a ready production deployment. The web app deployment target is not
+currently identified; see the [main deployment guidance](../../README.md#deployment).
 
 Nothing in this project admits, cancels or retries policy operations. The
 workers inside the sandbox are the unchanged SQL-journal workers; SQL leases
@@ -64,12 +65,12 @@ and supervisor start, then drains, stops and deletes it. Reports land in
 
 ## Deploy, enable, roll back
 
-```sh
-cd deploy/vercel-worker-host
-vercel deploy --prod --scope softmax-3ba1c1cc
-# status
-curl -s -H "Authorization: Bearer $CRON_SECRET" "https://<deployment>/api/host?action=status"
-```
+The worker host is a separate Vercel project. Its deployment procedure and local
+project linkage have not been verified. Confirm both before deploying: a team scope
+alone does not identify the destination project. The operations below are historical
+runbook notes and should be revalidated against the current host before use.
+
+The status endpoint is `GET /api/host?action=status` on the worker-host deployment.
 
 Enable: add `VERCEL_TOKEN`, drain the laptop supervisor (`kill -TERM` the
 `container-policy-service.mjs` process and wait for exit), set

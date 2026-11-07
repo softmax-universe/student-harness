@@ -211,11 +211,10 @@ hydration), and `channels/eve.ts` (accepts the arena's own student cookie).
 
 1. Create `.env.local` from `.env.example`. `SESSION_SECRET` is 32 random bytes in hex; it seals the
    student cookie and the stored Softmax tokens, so the Next app and the eve service must share it.
-2. Provision Supabase from the linked Vercel project: `vercel integration add supabase`, then
-   `vercel env pull .env.local` and `npm run db:migrate` (uses `psql` and `POSTGRES_URL`).
-3. `vercel env pull` also writes `VERCEL_OIDC_TOKEN`, which the eve service needs locally to create
-   Vercel Sandboxes and authenticate to AI Gateway. Refresh it when expired. To preserve local-only
-   overrides, pull to a temporary file and copy its `VERCEL_OIDC_TOKEN` into `.env.local`.
+2. Configure a Supabase database and the values in `.env.example` for this app. Apply migrations
+   with `npm run db:migrate` (uses `psql` and `POSTGRES_URL`).
+3. The eve service needs Vercel credentials to create Sandboxes and authenticate to AI Gateway.
+   Use credentials for a project approved for this app and refresh them when expired.
 4. `npm install` and `npm run dev`. Next boots the eve dev server beside it. `npm run eve:info`
    prints what eve discovered under `agent/`.
 
@@ -226,10 +225,17 @@ the old `PRESTON_OPENAI_TRANSPORT` setting do not route these agent calls. Resta
 dev server after refreshing credentials. Billing failures preserve the session and request attention
 instead of retrying indefinitely; temporary rate limits resume automatically.
 
-Deploy the project to Vercel from the repo root. `withEve` emits the eve service and routes; the same
-project environment must carry `SESSION_SECRET` and the Supabase variables; AI Gateway uses project OIDC.
-Students sign in with a Softmax user token; it is encrypted in an HTTP-only cookie and stored sealed
-in the students table so the durable coach can act as them between requests.
+### Deployment
+
+No current deployment target has been identified for this standalone repository. The Softmax Vercel
+project named [`student-harness`](https://vercel.com/softmax-3ba1c1cc/student-harness) now serves
+[`softmax-universe/softmax`'s `packages/softmax-ide`](https://github.com/softmax-universe/softmax/tree/main/packages/softmax-ide),
+including `student-harness-seven.vercel.app`. Do not deploy this repository to that project.
+
+If a target is established, `withEve` emits the eve service and routes. Its project environment needs
+`SESSION_SECRET` and the Supabase variables; AI Gateway uses project OIDC. Students sign in with a
+Softmax user token, which is encrypted in an HTTP-only cookie and stored sealed in the students table.
+The separate [worker-host project](deploy/vercel-worker-host/README.md) does not host this web app.
 
 `league.json` and `xp.json` target the default Gods of the Arena league. The league's
 Coworld remains Gods of the Arena; hosted games, standings, and submissions use the configured GoTA league ID.
